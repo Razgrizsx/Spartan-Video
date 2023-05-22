@@ -1,16 +1,27 @@
 'use client'
 import { useState } from "react";
 import AuthInput from "../components/input";
+import axios from "axios";
 
 
 export default function Auth(){
     const [email, setEmail] = useState('')
-    const [username, setUsername] = useState('')
+    const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const [logged, setLogged] = useState('Log In')
 
     const toggleLogged = (e) => {logged === 'Log In' ? setLogged('Register') : setLogged('Log In')}
-
+    const register = async () => {
+        try {
+            await axios.post('/api/register',{
+                email,
+                name,
+                password
+            })
+        } catch (error) {
+            console.log('Error', error)
+        }
+    }
     return(
         <div className="relative h-full w-full bg-[url('/images/hero.png')] bg-no-repeat bg-fixed bg-center bg-cover">
             <div className="bg-black w-full h-full bg-opacity-50">
@@ -24,14 +35,14 @@ export default function Auth(){
                         </h2>
                         <div className="flex flex-col gap-4">
                             {logged === 'Register' && 
-                            <AuthInput label='Username' onChange={(e) => {setUsername(e.target.value)}} type='text' id={'username'} value={username}></AuthInput>}
+                            <AuthInput label='Name' onChange={(e) => {setName(e.target.value)}} type='text' id={'name'} value={name}></AuthInput>}
                             
                             <AuthInput label='Password' onChange={(e) => {setPassword(e.target.value)}} type='password' id={'password'} value={password}></AuthInput>
                             
                             <AuthInput label='Email' onChange={(e) => {setEmail(e.target.value)}} type='email' id={'email'} value={email}></AuthInput>
                         
                         </div>
-                        <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+                        <button onClick={register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
                             {logged === 'Log In' ? 'Log In' : 'Sign Up'}
                         </button>
                         <p className="text-neutral-500 mt-12">

@@ -1,6 +1,6 @@
 import NextAuth from "next-auth/next";
 import Credentials from "next-auth/providers/credentials";
-import prismadb from '../../../lib/prismadb'
+import prismadb from '../../../../lib/prismadb'
 import { compare } from "bcrypt";
 
 
@@ -46,5 +46,9 @@ export default NextAuth({
     debug:process.env.NODE_ENV === 'development',
     session: {
         strategy: "jwt"
-    }
+    },
+    jwt:{
+        secret: process.env.NEXTAUTH_JWT_SECRET
+    },
+    secret: process.env.NEXTAUTH_SECRET
 })
