@@ -2,6 +2,10 @@
 import { useState } from "react";
 import AuthInput from "../components/input";
 import axios from "axios";
+import { signIn } from "next-auth/react"
+import { useRouter } from "next/navigation";
+import {FcGoogle} from 'react-icons/fc'
+import {FaGithub} from 'react-icons/fa'
 
 
 export default function Auth(){
@@ -10,7 +14,24 @@ export default function Auth(){
     const [password, setPassword] = useState('')
     const [logged, setLogged] = useState('Log In')
 
+    const router = useRouter()
+
     const toggleLogged = (e) => {logged === 'Log In' ? setLogged('Register') : setLogged('Log In')}
+
+    const login = async () => {
+        try {
+            await signIn('credentials', {
+                email,
+                password,
+                redirect: false,
+                callbackUrl: '/'
+            })
+            router.push('/')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const register = async () => {
         try {
             await axios.post('/api/register',{
@@ -42,9 +63,17 @@ export default function Auth(){
                             <AuthInput label='Email' onChange={(e) => {setEmail(e.target.value)}} type='email' id={'email'} value={email}></AuthInput>
                         
                         </div>
-                        <button onClick={register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+                        <button onClick={logged === 'Log In' ? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
                             {logged === 'Log In' ? 'Log In' : 'Sign Up'}
                         </button>
+                        <div className="flex flex-row items-center gap-4 mt-8 justify-center">
+                            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+                                <FcGoogle size={30}/>
+                            </div>
+                            <div onClick={() => signIn('github', {callbackUrl: '/'})} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+                                <FaGithub size={30}/>
+                            </div>
+                        </div>
                         <p className="text-neutral-500 mt-12">
                             {logged === 'Log In' ? 'New to Spartan?' : 'Already have an account?'}
                             <span onClick={toggleLogged} className="text-white ml-1 hover:underline cursor-pointer">
