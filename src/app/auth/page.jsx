@@ -1,4 +1,5 @@
 'use client'
+
 import { useState } from "react";
 import AuthInput from "../components/input";
 import axios from "axios";
@@ -80,6 +81,7 @@ export default function Auth(){
                                {logged === 'Log In' ? 'Create an account' : 'Log In Here'}
                             </span>
                         </p>   
+                        
                     </div>
                 </div>
             </div>

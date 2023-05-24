@@ -1,4 +1,5 @@
 import './globals.css'
+import { NextAuthProvider } from './provider'
 
 
 export const metadata = {
@@ -10,8 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <NextAuthProvider>
         {children}
-        
+        </NextAuthProvider>
       </body>
     </html>
   )
