@@ -10,7 +10,6 @@ import { User } from "./components/user";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  console.log(session);
 
   return (
     <main
@@ -18,19 +17,13 @@ export default async function Home() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "70vh",
+        height: "100%",
+        backgroundColor: "black",
+        opacity: 0.5
       }}
     >
-      <div>
-        <LoginButton />
-        <RegisterButton />
-        <LogoutButton />
-        <ProfileButton />
-
-        <h1>Server Session</h1>
-        <pre>{JSON.stringify(session)}</pre>
-
-        <User />
+      <div className="text-white">
+        Main
       </div>
     </main>
   );

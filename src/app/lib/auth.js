@@ -3,13 +3,14 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 
 
+
 export const authOptions = {
   session: {
     strategy: "jwt",
   },
   providers: [
     CredentialsProvider({
-      name: "Sign in",
+      name: "Email",
       credentials: {
         email: {
           label: "Email",
@@ -46,6 +47,11 @@ export const authOptions = {
     }),
   ],
   callbacks: {
+    redirect: async ({ url, baseUrl }) => {
+      return url.startsWith(baseUrl)
+        ? Promise.resolve(url)
+        : Promise.resolve(baseUrl);
+    },
     session: ({ session, token }) => {
       console.log("Session Callback", { session, token });
       return {

@@ -1,5 +1,6 @@
 import './globals.css'
 import { NextAuthProvider } from './provider'
+import Navigation from './components/Navigation'
 
 
 export const metadata = {
@@ -10,7 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      
+      <body className="relative h-full w-full bg-[url('/images/hero.png')] bg-no-repeat bg-fixed bg-center bg-cover"> 
+        <Navigation/>
         <NextAuthProvider>
         {children}
         </NextAuthProvider>
