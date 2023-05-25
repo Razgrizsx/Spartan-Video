@@ -4,9 +4,7 @@ import { useState } from "react";
 import AuthInput from "../components/input";
 import axios from "axios";
 import { signIn, signOut } from "next-auth/react"
-import { redirect, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import Navigation from "../components/Navigation";
 
 
 export default function Auth(){
@@ -16,8 +14,6 @@ export default function Auth(){
     const [logged, setLogged] = useState('Log In')
 
     const { data: session } = useSession();
-
-    const router = useRouter()
 
     const toggleLogged = (e) => {logged === 'Log In' ? setLogged('Register') : setLogged('Log In')}
 

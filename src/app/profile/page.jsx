@@ -8,10 +8,9 @@ export default async function Profile() {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    redirect("/api/auth/signin");
+    redirect("/auth");
   }
 
-  console.log(session)
   return (
     <div className="flex items-center h-full justify-center bg-zinc-900">
       <div className="flex flex-col bg-zinc-900 bg-opacity-50">
