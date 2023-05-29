@@ -44,7 +44,7 @@ export default function Navigation(){
                 ))}
                 
             </ul>
-                <li onClick={() => setVisible(!visible)} className="text-white cursor-pointer hover:text-gray-300 lg:hidden flex flex-row px-4 md:px-6 items-center duration-500 gap-7 transition">
+                <li onClick={() => setVisible(!visible)} className="text-white z-40 cursor-pointer hover:text-gray-300 lg:hidden flex flex-row px-4 md:px-6 items-center duration-500 gap-7 transition">
                     <p className="text-white text-sm" key='browse'>Browse</p>
                     <BsChevronDown className={`text-white transition ${visible ? 'rotate-180' : 'rotate-0'}`}/>
                     <Mobile visible={visible}/>
@@ -56,7 +56,7 @@ export default function Navigation(){
                     <div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
                         <BsBell/>
                     </div>
-                    <div onClick={() => setShow(!show)} className="flex flex-row items-center gap-2 cursor-pointer relative">
+                    <div onClick={() => setShow(!show)} className="flex z-40 flex-row items-center gap-2 cursor-pointer relative">
                         <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
                             <img src="/images/profile.webp" alt="profile" />
                         </div>
