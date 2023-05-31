@@ -1,0 +1,18 @@
+import prismadb from '../../lib/prismadb'
+import { NextResponse } from 'next/server'
+import { getServerSession } from 'next-auth/next'
+import {authOptions} from '../../lib/auth'
+
+export async function POST(request){
+    try {
+        const user = await getServerSession(authOptions)
+        /* const currentUser = await prismadb.user.findUnique({
+            where: {
+              email: user.email,
+            },
+          }); */
+       return NextResponse.json(user) 
+    } catch (error) {
+       return NextResponse.json(error)
+    }
+}

@@ -41,6 +41,7 @@ export const authOptions = {
           id: user.id,
           email: user.email,
           name: user.name,
+          favoriteId: user.favoriteId,
           randomKey: "Hey cool",
         };
       },
@@ -59,6 +60,7 @@ export const authOptions = {
           ...session.user,
           id: token.id,
           randomKey: token.randomKey,
+          favoriteId: token.favoriteId
         },
       };
     },
@@ -69,6 +71,7 @@ export const authOptions = {
           ...token,
           id: u.id,
           randomKey: u.randomKey,
+          favoriteId: u.favoriteId
         };
       }
       return token;
