@@ -25,7 +25,7 @@ const links = [
     },
     {
         label: 'My List',
-        route: '/profile'
+        route: '/MyList'
     },
 ]
 

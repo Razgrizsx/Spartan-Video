@@ -3,10 +3,9 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 export default async function MovieList({title}){
-    const user = await axios.post(`${process.env.BASE_URL}/current`)
+    
     const {data} = await axios.get(`${process.env.BASE_URL}/movies`)
     
-    console.log(user.data)
     return (
         <div className="px-4 md:px-12 mt-4 space-y-8 h-[300px]">
         <div>

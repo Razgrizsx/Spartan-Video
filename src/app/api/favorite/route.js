@@ -36,23 +36,27 @@
  }
 
  export async function DELETE(request){
-    try {
-        const {user} = await getServerSession(authOptions)
+    return NextResponse.json('connected')
+    const {user} = await getServerSession(authOptions)
         const {data} = await request.json()
+        
         const currentUser = await prismadb.user.findUnique({
             where: {
               email: user.email,
             },
           })
-        const foundMovie = await prismadb.movie.findUnique({
+          
+         const foundMovie = await prismadb.movie.findUnique({
             where:{
                 id: data.movieId
             }
         })
+        
         if(!foundMovie){
             throw new Error('Invalid Id')
         }
         const newfavorites = currentUser.favoriteIds.filter((e) => e === data.id)
+        
         const cUser = await prismadb.user.update({
             where:{
                 email: user.email
@@ -61,29 +65,7 @@
                 favoriteIds: newfavorites
             }
         })
-        return NextResponse.json(cUser)
-    } catch (error) {
-        console.log(error)
-    }
- }
-
-
- export async function GET(request){
-    try {
-        const {user} = await getServerSession(authOptions)
-        //const res = await request.json()
-        /* const foundMovie = await prismadb.movie.findUnique({
-            where:{
-                id: res.id
-            }
-        }) 
-        if(!foundMovie){
-            throw new Error('Invalid Id')
-        }*/
-
-
-        return NextResponse.json(user)
-    } catch (error) {
-        console.log(error)
-    }
+        
+        
+    
  }

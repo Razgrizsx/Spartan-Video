@@ -1,7 +1,13 @@
 import { BsFillPlayFill } from 'react-icons/bs'
 import FavoriteButtons from './FavoriteButtons'
+import Link from "next/link"
 
 export default function MovieCard({movie}){
+
+    
+
+    console.log(movie)
+ 
     return (
         <div className="group bg-zinc-900 col-span relative h-[12vw]">
             <img className="cursor-pointer object-cover transition duration shadow-xl rounded-md group-hover:opacity-90 sm:group-hover:opacity-0 delay-300 w-full h-[12vw]" src={movie.thumbnailurl} alt="thumbnail" />
@@ -10,8 +16,8 @@ export default function MovieCard({movie}){
             <div className="z-10 bg-zinc-800 p-2 lg:p-4 absolute w-full transition shadow-md rounded-b-md">
                 <div className="flex flesx-row items-center gap-3">
                     <div className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-neutral-500 rounded-full flex justify-center items-center transition hover:bg-neutral-600" 
-                        /* onClick={''} */>
-                            <BsFillPlayFill/>
+                         >
+                            <Link href={'/WatchPage'} ><BsFillPlayFill/></Link>
                     </div>
                     <FavoriteButtons movieId={movie.id} />
                 </div>

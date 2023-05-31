@@ -9,7 +9,6 @@ export default async function Home() {
     <div className="bg-zinc-900 text-white">
       <BillBoard/>
       <MovieList title='Trending Now'/>
-      <MyMovieList title='My List'/>
     </div>
   );
 }
