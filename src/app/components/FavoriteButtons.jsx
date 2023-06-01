@@ -26,13 +26,16 @@ export default function FavoriteButtons({movieId}){
 
     const toggleFavorite = async () => {    
       if(data?.includes(movieId)){
-        const response = await axios.delete('api/favorite', {data: {movieId}})
-      console.log('delete', response)
-      setData(data.filter((e) => e === movieId))
+        const newFavorites = data.filter((e) => e !== movieId)
+        setData(newFavorites)
+        const response = await axios.put('api/favorite', {data: movieId})
+        
+        
       }else{
+        setData([...data, movieId])
         const response = await axios.post('api/favorite', {data: {movieId}})
-      console.log('post', response)
-      setData([...data, movieId])
+        console.log('post', response)
+      
       }
      }  
 
