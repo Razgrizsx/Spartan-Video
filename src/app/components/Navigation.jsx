@@ -5,6 +5,8 @@ import {BsChevronDown, BsSearch, BsBell } from'react-icons/bs'
 import Mobile from "./Mobile"
 import { useState } from "react"
 import AccountMenu from './AccountMenu'
+import InfoModal from "./infoModal";
+import useInfoModal from "../hooks/useModal";
 
 const links = [
     {
@@ -30,11 +32,15 @@ const links = [
 ]
 
 export default function Navigation(){
+    const {isOpen, closeModal} = useInfoModal()
     const [visible, setVisible] = useState(false)
     const [show, setShow] = useState(false)
     return (
         
         <nav className="bg-zinc-950 flex flex-row px-12 py-5 w-full">
+
+            <InfoModal visible={isOpen} onClose={closeModal}/>
+            
             <img src="/images/logo.png" alt="logo" className="h-14 drop-shadow-[0_2px_5px_rgba(255,0,0,1)]"/>
             <ul className="lg:flex flex-row px-4 md:px-6 items-center transition duration-500 gap-7 hidden">
                 {links.map(({route, label}) => (

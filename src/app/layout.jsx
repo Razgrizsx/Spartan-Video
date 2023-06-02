@@ -1,7 +1,7 @@
 import './globals.css'
 import { NextAuthProvider } from './provider'
 import Navigation from './components/Navigation'
-
+import InfoModal from './components/infoModal'
 
 
 export const metadata = {

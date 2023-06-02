@@ -14,7 +14,7 @@ export default function MovieCard({movie}){
                 <div className="flex flesx-row items-center gap-3">
                     <div className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 bg-neutral-500 rounded-full flex justify-center items-center transition hover:bg-neutral-600" 
                          >
-                            <Link href={'/WatchPage'} ><BsFillPlayFill/></Link>
+                            <Link href={`/WatchPage/${movie.id}`} ><BsFillPlayFill/></Link>
                     </div>
                     <FavoriteButtons movieId={movie.id} />
                 </div>
