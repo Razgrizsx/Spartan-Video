@@ -10,7 +10,7 @@ export default async function Home() {
   
 
   return (
-    <div className="bg-zinc-900 text-white">
+    <div className="bg-zinc-900 h-full text-white">
       <BillBoard/>
       <MovieList title='Trending Now'/>
     </div>

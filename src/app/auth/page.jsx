@@ -29,6 +29,7 @@ export default function Auth(){
         }
     }
     return(
+        <div className="relative h-full w-full bg-[url('/images/hero.png')] bg-no-repeat bg-fixed bg-center bg-cover">
         <div className="bg-black w-full h-full bg-opacity-50 pt-6">
             <div className="w-full h-full">
                 <div className="flex justify-center">
@@ -58,6 +59,7 @@ export default function Auth(){
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

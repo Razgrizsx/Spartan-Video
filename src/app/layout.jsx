@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="relative h-full w-full bg-[url('/images/hero.png')] bg-no-repeat bg-fixed bg-center bg-cover"> 
+      <body className="relative h-full w-full bg-zinc-900 bg-no-repeat bg-fixed bg-center bg-cover"> 
         <Navigation/>
         <NextAuthProvider>
         {children}

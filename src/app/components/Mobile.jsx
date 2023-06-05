@@ -7,20 +7,20 @@ const links = [
         route: '/'
     },
     {
-        label: 'Series',
+        label: 'Login',
         route: '/auth'
     },
     {
-        label: 'Films',
+        label: 'Profile',
         route: '/profile'
     },
     {
-        label: 'New & Popular',
-        route: '/profile'
+        label: 'Movies',
+        route: '/Movies'
     },
     {
         label: 'My List',
-        route: '/profile'
+        route: '/MyList'
     },
 ]
 
