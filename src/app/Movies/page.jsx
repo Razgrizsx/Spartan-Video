@@ -2,7 +2,7 @@ import axios from "axios"
 import MovieFullCard from "../components/MovieFullCard"
 //A
 export default async function Movies(){
-    let data = {data: []}
+    let data = {data: ['loading']}
     data = await axios.get(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies`) 
 
     return (
