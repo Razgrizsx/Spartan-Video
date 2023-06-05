@@ -6,7 +6,7 @@ import { BsFillPlayFill } from 'react-icons/bs'
 
 export default async function BillBoard(){
 
-   const data = await axios.post(`${process.env.NEXT_PUBLIC_VERCEL_URL}/random`)
+   const data = await axios.post(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/random`)
    const {id, description, title, videourl, thumbnailurl} = data.data
        return( 
         <div className="relative h-[400px] w-full">
