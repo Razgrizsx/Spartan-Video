@@ -3,7 +3,7 @@ import MovieFullCard from "../components/MovieFullCard"
 
 export default async function Movies(){
 
-    const {data} = await axios.get(`${process.env.BASE_URL}/movies`) 
+    const {data} = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL}/movies`) 
 
     return (
         <div className="flex items-center h-full justify-center bg-zinc-800">
