@@ -18,7 +18,7 @@ export default async function MovieList({title}){
                 <MovieCard key={movie.title} movie={movie} />
             )
             } 
-            ) 
+            )}
         </div>
         </div>
     )
