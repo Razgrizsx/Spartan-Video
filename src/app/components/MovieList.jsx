@@ -7,7 +7,7 @@ export default async function MovieList({title}){
     data = await axios.get(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies`)
     
     return (
-        <div className="px-4 md:px-12 mt-4 space-y-8 h-[300px]">
+       <div className="px-4 md:px-12 mt-4 space-y-8 h-[300px]">
         <div>
             <p className="text-white text-md md:text-xl lg:text-2-xl font-semibold mb-4">
                 {title}
@@ -19,6 +19,7 @@ export default async function MovieList({title}){
             )
             } 
             )}
+            </div>
         </div>
         </div>
     )
