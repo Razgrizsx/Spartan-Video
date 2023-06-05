@@ -13,12 +13,14 @@ export default async function Movies(){
                 {data.title}
             </p>
             <div className="grid grid-cols-4 gap-2">
-            {data?.map((movie) => { 
+            {data ? data?.map((movie) => { 
                 return(
                 <MovieFullCard key={movie.title} movie={movie} />
             )
             } 
-            )}
+            ) : 
+                <div>Loading...</div>
+            }
             </div>
         </div>
         </div>
