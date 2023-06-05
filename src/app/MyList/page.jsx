@@ -32,7 +32,7 @@ export default function MyList(){
             <div className="grid grid-cols-4 gap-2">
             {data?.map((movie) => { 
                 return(
-                <MovieCard movie={movie} />
+                <MovieCard key={movie.title} movie={movie} />
             )
             } 
             )}

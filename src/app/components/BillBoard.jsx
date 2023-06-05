@@ -3,7 +3,9 @@ import Link from "next/link"
 import {AiOutlineInfoCircle} from 'react-icons/ai'
 import { BsFillPlayFill } from 'react-icons/bs'
 
+
 export default async function BillBoard(){
+
    const data = await axios.post(`${process.env.BASE_URL}/random`)
    const {id, description, title, videourl, thumbnailurl} = data.data
        return( 
