@@ -1,6 +1,6 @@
 import axios from "axios"
 import MovieFullCard from "../components/MovieFullCard"
-
+//A
 export default async function Movies(){
 
     const {data} = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_URL}/movies`) 
