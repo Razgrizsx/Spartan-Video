@@ -4,7 +4,7 @@ import axios from "axios";
 import MovieCard from "../components/MovieCard";
 
 export default function MyList(){
-    const [data, setData] = useState()
+    const [data, setData] = useState([])
     const [error, setError] = useState()
 
   useEffect(() => {
