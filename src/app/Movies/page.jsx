@@ -2,8 +2,8 @@ import axios from "axios"
 import MovieFullCard from "../components/MovieFullCard"
 //A
 export default async function Movies(){
-
-    const {data} = await axios.get(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies`) 
+    let data = []
+    data = await axios.get(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies`) 
 
     return (
         <div className="flex items-center h-full justify-center bg-zinc-800">
@@ -13,13 +13,12 @@ export default async function Movies(){
                 {data.title}
             </p>
             <div className="grid grid-cols-4 gap-2">
-            {data ? data?.map((movie) => { 
+            {data?.data.map((movie) => { 
                 return(
                 <MovieFullCard key={movie.title} movie={movie} />
             )
             } 
-            ) : 
-                <div>Loading...</div>
+            )
             }
             </div>
         </div>
