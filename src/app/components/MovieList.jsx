@@ -3,7 +3,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 
 export default async function MovieList({title}){
-    let data = {data: []}
+    let data = {data: ['loading']}
     data = await axios.get(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies`)
     
     return (
