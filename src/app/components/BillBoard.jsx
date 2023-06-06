@@ -28,7 +28,7 @@ export default async function BillBoard(){
    
    
    //data = await axios.post(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/random`)
-   const {id, description, title, videourl, thumbnailurl} = data?.data
+   const {id, description, title, videourl, thumbnailurl} = data
        return( 
         <div className="relative h-[400px] w-full">
             <video className="w-full h-[400px] object-cover brightness-[60%]" autoPlay muted loop poster={thumbnailurl} src={videourl}></video>
