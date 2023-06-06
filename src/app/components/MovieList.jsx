@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 
 export default async function MovieList({title}){
     let data = {data: ['loading']}
-    data = await axios.get(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies`)
+    data = await axios.get(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/movies`)
     
     return (
        <div className="px-4 md:px-12 mt-4 space-y-8 h-[300px]">
