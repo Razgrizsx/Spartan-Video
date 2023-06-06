@@ -27,8 +27,7 @@ export default function MyList(){
       fetchData();
     },
    []);
-    
-    console.log(data)
+  
     return(
         <div className="px-4 md:px-12 space-y-8 bg-zinc-800 h-full">
         <div>
