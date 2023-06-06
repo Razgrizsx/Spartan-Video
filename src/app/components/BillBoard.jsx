@@ -2,10 +2,30 @@ import axios from "axios"
 import Link from "next/link"
 import {AiOutlineInfoCircle} from 'react-icons/ai'
 import { BsFillPlayFill } from 'react-icons/bs'
+import React, {useState, useEffect} from "react"
 
 
 export default async function BillBoard(){
-   let data = {data: ['loading']}
+   const [data, setData] = useState()
+    const [error, setError] = useState()
+
+  useEffect(() => {
+   
+      async function fetchData() {
+        try {
+          const response = await axios.get('api/random');
+          setData(response.data)
+        } catch (error) {
+          setError("No pudimos hacer la solicitud");
+        }
+      }
+      fetchData();
+    },
+   []);
+    
+    console.log(data)
+   
+   
    data = await axios.post(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/random`)
    const {id, description, title, videourl, thumbnailurl} = data.data
        return( 
