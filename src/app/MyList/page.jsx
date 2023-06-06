@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import MovieCard from "../components/MovieCard";
-export const dynamic = 'force-dynamic'
+
 
 export default function MyList(){
     const [data, setData] = useState([])
