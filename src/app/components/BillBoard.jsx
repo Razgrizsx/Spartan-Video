@@ -6,7 +6,7 @@ import { BsFillPlayFill } from 'react-icons/bs'
 import React, {useState, useEffect} from "react"
 
 
-export default async function BillBoard(){
+export default function BillBoard(){
    const [data, setData] = useState()
     const [error, setError] = useState()
 
