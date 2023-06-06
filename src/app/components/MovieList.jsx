@@ -23,7 +23,7 @@ export default function MovieList({title}){
     },
    []);
     
-    console.log(data)
+   
 
 
     //const {data} = await axios.get(`${process.env.BASE_URL}/movies`)
