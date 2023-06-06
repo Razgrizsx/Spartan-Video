@@ -23,7 +23,8 @@ export default function FavoriteButtons({movieId}){
     },
    []);
     
-
+  console.log(data)
+  
     const toggleFavorite = async () => {    
       if(data?.includes(movieId)){
         const newFavorites = data.filter((e) => e !== movieId)
