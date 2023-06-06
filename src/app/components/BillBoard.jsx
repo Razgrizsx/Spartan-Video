@@ -26,7 +26,7 @@ export default async function BillBoard(){
     console.log(data)
    
    
-   data = await axios.post(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/random`)
+   //data = await axios.post(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/random`)
    const {id, description, title, videourl, thumbnailurl} = data.data
        return( 
         <div className="relative h-[400px] w-full">
