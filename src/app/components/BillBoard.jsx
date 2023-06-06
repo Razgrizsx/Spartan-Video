@@ -14,7 +14,7 @@ export default function BillBoard(){
    
       async function fetchData() {
         try {
-          const response = await axios.get('api/random');
+          const response = await axios.post('api/random');
           setData(response.data)
         } catch (error) {
           setError("No pudimos hacer la solicitud");
