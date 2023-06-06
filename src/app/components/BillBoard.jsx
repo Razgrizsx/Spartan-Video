@@ -24,7 +24,7 @@ export default function BillBoard(){
     },
    []);
     
-    console.log(data)
+    
    
    
    //data = await axios.post(`http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/random`)
