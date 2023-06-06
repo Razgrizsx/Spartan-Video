@@ -6,6 +6,7 @@ import MovieCard from "../components/MovieCard";
 export default function MyList(){
     const [data, setData] = useState([])
     const [error, setError] = useState()
+    export const dynamic = 'force-dynamic'
 
   useEffect(() => {
    
