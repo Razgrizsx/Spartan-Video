@@ -2,12 +2,18 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import MovieCard from "../components/MovieCard";
-
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 export default function MyList(){
     const [data, setData] = useState([])
     const [error, setError] = useState()
-
+    const { data : session } = useSession();
+    
+    if (!session) {
+      redirect("/auth");
+    }
+    
   useEffect(() => {
    
       async function fetchData() {
