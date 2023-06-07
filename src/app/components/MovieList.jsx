@@ -13,7 +13,7 @@ export default function MovieList({title}){
    
       async function fetchData() {
         try {
-          const response = await axios.get('api/movies');
+          const response = await axios.get('api/MainMovies');
           setData(response.data)
         } catch (error) {
           setError("No pudimos hacer la solicitud");
