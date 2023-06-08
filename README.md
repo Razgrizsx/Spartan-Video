@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Spartan-Video
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Visit the deployed site in: https://spartan-video.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+This is a video application developed with next-javascript. With it you can register and watch movies and series online. Due to copyright only a couple of short films could be used as a demonstration:
+
+1. Main Page
+
+Logo, billboard and trending movies.
+
+<p align="center">
+  <img height="300" src="https://user-images.githubusercontent.com/104910559/244478985-be3a579b-24bd-49a2-bbb8-e85919eed637.PNG" />
+</p>
+
+2. Login and Register Page
+
+Where the user can register or login if they have an existing account.
+
+<p align="center">
+  <img height="300" src="https://user-images.githubusercontent.com/104910559/244478969-2c6d4cdf-e8fb-46c1-94f4-451fb102fa94.PNG" />
+</p>
+
+<p align="center">
+  <img height="300" src="https://user-images.githubusercontent.com/104910559/244479745-d10ebc6a-b71b-4e73-a95e-db798606c8f1.PNG" />
+</p>
+
+3. Movies Page
+
+Detailed information about all movies.
+
+<p align="center">
+  <img height="300" src="https://user-images.githubusercontent.com/104910559/244478992-0e761def-a792-48bf-9974-c52906332722.PNG" />
+</p>
+
+4. My List Page
+
+This is a list of the favorited movies.
+
+<p align="center">
+  <img height="300" src="https://user-images.githubusercontent.com/104910559/244478995-926e7bcd-ad3f-4c6d-bf12-658f2cbccafa.PNG" />
+</p>
+
+5. Profile Page
+
+Information about the user.
+
+<p align="center">
+  <img height="300" src="https://user-images.githubusercontent.com/104910559/244478999-a73b5b4a-c010-40c3-90ff-94eec4e1be6c.PNG" />
+</p>
+
+5. Watch Page
+
+Where the user can watch the selected movie.
+
+<p align="center">
+  <img height="300" src="https://user-images.githubusercontent.com/104910559/244488927-3b707406-b274-49f1-8795-1e163681df7e.PNG" />
+</p>
+
+## Local Set Up
+
+You'll need to have a modern Browser, Git and NodeJS installed in your machine for this app to work locally. When you meet those requirements proceed with the steps bellow.
+
+1. Clone this repo to your local machine.
+
+```sh
+git clone https://github.com/Razgrizsx/Spartan-Video.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. On a terminal window of your preference navigate to the path where you cloned the repo.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Open a terminal on the Spartan-Video folder.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Run the command "npm install" to set up the project dependicies.
 
-## Learn More
+```sh
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. On the terminal prompt run the command
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The app will launch on your default browser.
