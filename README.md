@@ -11,7 +11,7 @@ This is a video application developed with next-javascript. With it you can regi
 Logo, billboard and trending movies.
 
 <p align="center">
-  <img height="300" src="https://user-images.githubusercontent.com/104910559/244478985-be3a579b-24bd-49a2-bbb8-e85919eed637.PNG" />
+  <img height="300" src="https://user-images.githubusercontent.com/104910559/244489461-8f2714d2-d5df-413c-a2e9-200214ddf257.PNG" />
 </p>
 
 2. Login and Register Page
